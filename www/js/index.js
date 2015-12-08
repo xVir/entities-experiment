@@ -19,7 +19,6 @@
 
 
 function tryInit(){
-    alert("try init");
         try {
            ApiAIPlugin.init(
                 {
@@ -40,15 +39,46 @@ function tryInit(){
        }
 }
 
-function sendRequest1(){
-
+function sendRequest1() {
+    ApiAIPlugin.requestText(
+        {
+            query: "I want kindle"
+        },
+        function (response) {
+            alert(JSON.stringify(response));
+        },
+        function (error) {
+            alert(error);
+        }
+    );
 }
 
-function sendRequest2(){
-
+function sendRequest2() {
+    ApiAIPlugin.requestText(
+        {
+            query: "I want milk",
+            entities: [
+                {
+                    name: "productsList",
+                    isEnum: true,
+                    entries: [
+                        {
+                            value: "@productsFood:productId"
+                        }
+                    ]
+                }
+            ]
+        },
+        function (response) {
+            alert(JSON.stringify(response));
+        },
+        function (error) {
+            alert(error);
+        }
+    );
 }
 
-function sendRequest3(){
+function sendRequest3() {
 
 }
 
@@ -69,10 +99,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert("ok");
-        //app.receivedEvent('deviceready');
-
-        document.getElementById('initButton').addEventListener("click", tryInit);
+        tryInit();
 
         document.getElementById('r1').addEventListener("click", sendRequest1);
         document.getElementById('r2').addEventListener("click", sendRequest2);
