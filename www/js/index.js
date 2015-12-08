@@ -118,6 +118,4 @@ var app = {
     }
 };
 
-
-
 app.initialize();
