@@ -45,7 +45,7 @@ function sendRequest1() {
             query: "I want kindle"
         },
         function (response) {
-            alert(JSON.stringify(response));
+            alert(JSON.stringify(response.result, null, 1));
         },
         function (error) {
             alert(error);
@@ -70,7 +70,7 @@ function sendRequest2() {
             ]
         },
         function (response) {
-            alert(JSON.stringify(response));
+            alert(JSON.stringify(response.result, null, 1));
         },
         function (error) {
             alert(error);
