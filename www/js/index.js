@@ -24,9 +24,7 @@ function tryInit(){
                 {
                     subscriptionKey: "cb9693af-85ce-4fbf-844a-5563722fc27f",
                     clientAccessToken: "983aa0bc558e41ad88bf42818e4c066b",
-                    lang: "en",
-                    baseURL: "https://api.api.ai/api/",
-                    version: "20151208"
+                    lang: "en"
                 },
                 function () {
                    alert("Init success");
